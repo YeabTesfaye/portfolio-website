@@ -6,3 +6,4 @@ export { default as Projects } from './projects';
 export { default as Skill } from './skills';
 export { default as Contact } from './contact';
 export { default as Experience } from './experience';
+export { default as Footer } from './footer';
