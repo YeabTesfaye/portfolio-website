@@ -2,9 +2,9 @@ import eLearning from '@/public/eLearning.png';
 import proStore from '@/public/prostore.png';
 import ticketMgmt from '@/public/ticketmgmt.png';
 import React from 'react';
-import { CgWorkAlt } from 'react-icons/cg';
-import { FaReact } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
+import { FaLaptopCode, FaUserSecret } from 'react-icons/fa';
+
 export const THEMES = {
   LIGHT: 'light',
   DARK: 'dark',
@@ -43,7 +43,7 @@ export const experiencesData = [
     location: 'Addis Ababa, Ethiopia',
     description:
       'Graduated with a degree in Computer Science with distinction, gaining a strong foundation in algorithms, data structures, and software development.',
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(LuGraduationCap), 
     date: '2023',
   },
   {
@@ -51,7 +51,7 @@ export const experiencesData = [
     location: 'Remote, Freelance',
     description:
       'Specialized in frontend development, leveraging Next.js to build responsive, high-performance, and visually appealing user interfaces.',
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaLaptopCode), 
     date: '2023 - 2025',
   },
   {
@@ -59,7 +59,7 @@ export const experiencesData = [
     location: 'Addis Ababa, Ethiopia',
     description:
       'Currently working as a full-stack developer and freelance penetration tester. Skilled in React, Next.js, TypeScript, Tailwind, Prisma, and MongoDB. Open to full-time remote opportunities.',
-    icon: React.createElement(FaReact),
+    icon: React.createElement(FaUserSecret), 
     date: '2024 - Present',
   },
 ] as const;
@@ -97,17 +97,15 @@ export const skillsData = [
   'TypeScript',
   'React',
   'Next.js',
+  '.NET',
   'Node.js',
   'Git',
   'Tailwind',
   'Prisma',
   'MongoDB',
   'Redux',
-  'GraphQL',
-  'Apollo',
   'Express',
   'PostgreSQL',
   'Python',
-  'Django',
   'Framer Motion',
 ] as const;
