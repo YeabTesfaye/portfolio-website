@@ -48,7 +48,7 @@ const Intro = () => {
         </div>
       </div>
 
-      <motion.p
+      <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium leading-snug sm:text-4xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Intro = () => {
         <span className="italic">building dynamic web applications </span>
         and solving complex problems. My focus is on{' '}
         <span className="font-bold">Next.js & AI</span>
-      </motion.p>
+      </motion.h1>
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
