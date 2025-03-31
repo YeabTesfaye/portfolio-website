@@ -43,7 +43,7 @@ export const experiencesData = [
     location: 'Addis Ababa, Ethiopia',
     description:
       'Graduated with a degree in Computer Science with distinction, gaining a strong foundation in algorithms, data structures, and software development.',
-    icon: React.createElement(LuGraduationCap), 
+    icon: React.createElement(LuGraduationCap),
     date: '2023',
   },
   {
@@ -51,15 +51,15 @@ export const experiencesData = [
     location: 'Remote, Freelance',
     description:
       'Specialized in frontend development, leveraging Next.js to build responsive, high-performance, and visually appealing user interfaces.',
-    icon: React.createElement(FaLaptopCode), 
+    icon: React.createElement(FaLaptopCode),
     date: '2023 - 2025',
   },
   {
     title: 'Penetration Tester',
     location: 'Addis Ababa, Ethiopia',
     description:
-      'Currently working as a full-stack developer and freelance penetration tester. Skilled in React, Next.js, TypeScript, Tailwind, Prisma, and MongoDB. Open to full-time remote opportunities.',
-    icon: React.createElement(FaUserSecret), 
+      'Currently working as a full-stack developer and penetration tester at Ethiopian Airlines. Skilled in React, Next.js, TypeScript, Tailwind, Prisma, and MongoDB. Open to full-time remote opportunities.',
+    icon: React.createElement(FaUserSecret),
     date: '2024 - Present',
   },
 ] as const;
