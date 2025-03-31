@@ -1,4 +1,4 @@
-import { SectionDivider, Intro, About } from '@/components';
+import { SectionDivider, Intro, About, Projects } from '@/components';
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Intro />
       <SectionDivider />
       <About />
+      <Projects />
     </main>
   );
 }

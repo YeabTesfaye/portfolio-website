@@ -1,3 +1,10 @@
+import eLearning from '@/public/eLearning.png';
+import proStore from '@/public/prostore.png';
+import ticketMgmt from '@/public/ticketmgmt.png';
+import React from 'react';
+import { CgWorkAlt } from 'react-icons/cg';
+import { FaReact } from 'react-icons/fa';
+import { LuGraduationCap } from 'react-icons/lu';
 export const THEMES = {
   LIGHT: 'light',
   DARK: 'dark',
@@ -30,7 +37,6 @@ export const links = [
   },
 ] as const;
 
-/*
 export const experiencesData = [
   {
     title: 'Computer Science Graduate',
@@ -58,27 +64,29 @@ export const experiencesData = [
   },
 ] as const;
 
-
 export const projectsData = [
   {
     title: 'Prostore',
     description:
       'A fully-fledged full-stack e-commerce platform with PayPal integration.',
     tags: ['React', 'Next.js', 'Tailwind', 'Prisma', 'TypeScript'],
-    imageUrl: corpcommentImg,
+    imageUrl: proStore,
+    githubUrl: 'https://github.com/YeabTesfaye/prostore',
   },
   {
     title: 'E-Learning Platform',
     description: 'A comprehensive e-learning platform built using .NET.',
     tags: ['.NET', 'C#', 'Docker', 'SQL Server'],
-    imageUrl: rmtdevImg,
+    imageUrl: eLearning,
+    githubUrl: 'https://github.com/YeabTesfaye/E-Learning-Platform',
   },
   {
     title: 'Ticket Tracking System',
     description:
       'A demo project for a Ticket Management System, designed to handle users, tickets, and workflows efficiently.',
     tags: ['React', 'MongoDB', 'Bootstrap', 'Node.js'],
-    imageUrl: wordanalyticsImg,
+    imageUrl: ticketMgmt,
+    githubUrl: 'https://github.com/YeabTesfaye/E-Learning-Platform',
   },
 ] as const;
 
@@ -103,5 +111,3 @@ export const skillsData = [
   'Django',
   'Framer Motion',
 ] as const;
-
-*/
