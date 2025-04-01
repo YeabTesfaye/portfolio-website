@@ -24,12 +24,13 @@ const Project = ({
 
   return (
     <motion.div
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 sm:mb-8 last:mb-0 scroll-mt-50"
       ref={ref}
       style={{
         scale: scaleProgress,
         opacity: opacityProgess,
       }}
+      id="projects"
     >
       <section
         className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg

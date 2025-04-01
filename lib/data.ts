@@ -5,11 +5,6 @@ import React from 'react';
 import { LuGraduationCap } from 'react-icons/lu';
 import { FaLaptopCode, FaUserSecret } from 'react-icons/fa';
 
-export const THEMES = {
-  LIGHT: 'light',
-  DARK: 'dark',
-} as const;
-
 export const links = [
   {
     name: 'Home',

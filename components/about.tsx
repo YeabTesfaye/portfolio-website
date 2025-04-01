@@ -30,7 +30,7 @@ const About = () => {
       <p>
         <span className="italic">When I’m not coding</span>, I enjoy{' '}
         <span className="font-medium">learning languages</span>—especially
-        English. I also love watching football and reading books. My goal is to
+        English. I also love reading books and working out. My goal is to
         advance in my career and become a{' '}
         <span className="font-medium">senior developer</span>. I am currently
         looking for{' '}

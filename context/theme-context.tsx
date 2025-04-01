@@ -1,19 +1,11 @@
 'use client';
 
-import { THEMES } from '@/lib/data';
-import {
-  ReactNode,
-  useEffect,
-  createContext,
-  useState,
-  useContext,
-} from 'react';
+import React, { useEffect, useState, createContext, useContext } from 'react';
 
-// Define the Theme type based on THEMES object keys
-type Theme = (typeof THEMES)[keyof typeof THEMES];
+type Theme = 'light' | 'dark';
 
 type ThemeContextProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 type ThemeContextType = {
@@ -23,17 +15,19 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(THEMES.LIGHT);
+export default function ThemeContextProvider({
+  children,
+}: ThemeContextProviderProps) {
+  const [theme, setTheme] = useState<Theme>('light');
 
   const toggleTheme = () => {
-    const newTheme = theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
-    setTheme(newTheme);
-    window.localStorage.setItem('theme', newTheme);
-
-    if (newTheme === THEMES.DARK) {
+    if (theme === 'light') {
+      setTheme('dark');
+      window.localStorage.setItem('theme', 'dark');
       document.documentElement.classList.add('dark');
     } else {
+      setTheme('light');
+      window.localStorage.setItem('theme', 'light');
       document.documentElement.classList.remove('dark');
     }
   };
@@ -41,34 +35,36 @@ const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme') as Theme | null;
 
-    if (localTheme && Object.values(THEMES).includes(localTheme)) {
+    if (localTheme) {
       setTheme(localTheme);
-      document.documentElement.classList.toggle(
-        'dark',
-        localTheme === THEMES.DARK,
-      );
+
+      if (localTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme(THEMES.DARK);
+      setTheme('dark');
       document.documentElement.classList.add('dark');
-    } else {
-      setTheme(THEMES.LIGHT);
-      document.documentElement.classList.remove('dark');
     }
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
-};
+}
 
-export default ThemeContextProvider;
-
-export const useTheme = () => {
+export function useTheme() {
   const context = useContext(ThemeContext);
 
   if (context === null) {
-    throw new Error('useTheme must be used with in a contextProvider');
+    throw new Error('useTheme must be used within a ThemeContextProvider');
   }
-};
+
+  return context;
+}

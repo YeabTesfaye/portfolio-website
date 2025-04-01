@@ -9,7 +9,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { Fragment } from 'react';
 const Experience = () => {
   return (
-    <section id="experience">
+    <section id="experience" className="scroll-mt-40">
       <SectionHeading>My Experience </SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
