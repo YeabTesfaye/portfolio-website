@@ -105,4 +105,8 @@ export const skillsData = [
   'PostgreSQL',
   'Python',
   'Framer Motion',
+  'Docker',
+  'AWS',
+  'CI/CD',
+  'Burp Suite',
 ] as const;

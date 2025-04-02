@@ -24,3 +24,8 @@ export const getErrorMessage = (error: unknown): string => {
 
   return message;
 };
+
+export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'onboarding@resend.dev';
+export const RECIVER_EMAIL =
+  process.env.RECIVER_EMAIL || 'hereisyeab@gmail.com';
+export const APP_NAME = 'Yeabsera Portfolio';

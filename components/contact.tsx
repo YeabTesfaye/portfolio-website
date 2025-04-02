@@ -1,12 +1,18 @@
 'use client';
+
 import toast from 'react-hot-toast';
 import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
-import sendEmail from '@/actions/sendEmail';
+import sendContactFormEmail from '@/actions/sendContactFormEmail';
 import SubmitBtn from './submit-button';
+import { useSectionInView } from '@/lib/hooks';
+
 const Contact = () => {
+  const { ref } = useSectionInView('Contact');
+
   return (
     <motion.section
+      ref={ref}
       id="contact"
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{ opacity: 0 }}
@@ -22,15 +28,21 @@ const Contact = () => {
         </a>{' '}
         or through this form
       </p>
+
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formdata) => {
-          const { error } = await sendEmail(formdata);
-          if (error) {
-            toast.error(error);
-            return;
+        action={async (formData) => {
+          try {
+            const { error, success } = await sendContactFormEmail(formData);
+            if (error) {
+              toast.error(error);
+              return;
+            }
+            toast.success(success || 'Email sent successfully!');
+          } catch (error: unknown) {
+            console.log(error);
+            toast.error('An unexpected error occurred. Please try again.');
           }
-          toast.success('Email sent successfully');
         }}
       >
         <input
@@ -40,6 +52,7 @@ const Contact = () => {
           required
           maxLength={500}
           placeholder="Your email"
+          aria-label="Your email"
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -47,6 +60,7 @@ const Contact = () => {
           placeholder="Your message"
           required
           maxLength={5000}
+          aria-label="Your message"
         />
         <SubmitBtn />
       </form>

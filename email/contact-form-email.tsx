@@ -1,12 +1,12 @@
 import {
-    Body,
-    Head,
-    Heading,
-    Hr,
-    Html,
-    Preview,
-    Section,
-    Text
+  Body,
+  Head,
+  Heading,
+  Hr,
+  Html,
+  Preview,
+  Section,
+  Text,
 } from '@react-email/components';
 import { Tailwind } from '@react-email/tailwind';
 
@@ -22,16 +22,27 @@ export default function ContactFormEmail({
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio</Preview>
+      <Preview>📩 New message from your portfolio</Preview>
       <Tailwind>
-        <Body className="bg-gray-100 text-black">
-          <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
-            <Heading className="leading-tight">
-              You received the following message from the contact form
+        <Body className="bg-gray-100 text-black font-sans">
+          <Section className="bg-white border border-gray-300 my-10 mx-auto max-w-lg rounded-lg p-6 shadow-md">
+            <Heading className="text-xl font-semibold text-gray-900">
+              ✉️ New Contact Form Message
             </Heading>
-            <Text>{message}</Text>
-            <Hr />
-            <Text>The sender&apos;s email is {senderEmail}</Text>
+            <Text className="text-gray-700 mt-4">{message}</Text>
+            <Hr className="my-4 border-gray-300" />
+            <Text className="text-gray-600">
+              <strong>Sender:</strong>{' '}
+              <a
+                href={`mailto:${senderEmail}`}
+                className="text-blue-600 underline"
+              >
+                {senderEmail}
+              </a>
+            </Text>
+            <Text className="text-sm text-gray-500 mt-4">
+              📬 Feel free to respond directly to this email.
+            </Text>
           </Section>
         </Body>
       </Tailwind>
