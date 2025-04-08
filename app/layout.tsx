@@ -5,7 +5,7 @@ import ActiveSectionContextProvider from '@/context/active-section-context';
 import Footer from '@/components/footer';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from 'next-themes'; // Import ThemeProvider
-import ModeToogle from '@/components/mode-toggle';
+// import ModeToogle from '@/components/mode-toggle';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <Toaster position="top-right" />
-            <ModeToogle />
+            {/* <ModeToogle /> */}
           </ActiveSectionContextProvider>
         </ThemeProvider>
       </body>
